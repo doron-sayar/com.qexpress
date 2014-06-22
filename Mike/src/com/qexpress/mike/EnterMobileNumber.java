@@ -23,7 +23,7 @@ public class EnterMobileNumber extends Activity {
 	SharedPreferences prefs;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) { 
+	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dialog_enter_mobile_number);
