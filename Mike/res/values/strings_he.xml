@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="last_in_line">מספר אחרון בתור:</string>
+    <string name="your_number">מספרך בתור:</string>
+    <string name="number_in_service">מספר בטיפול כעת:</string>
+    <string name="estimated_wait_time">זמן המתנה בתור:</string>
+    <string name="remaining_wait_time">זמן המתנה שנותר:</string>
+    <string name="minutes">דקות</string>
+    <string name="get_me_in">קח מספר!</string>
+    <string name="confirm_get_in_line">מאשר הצטרפות לתור? אנא וודא להגיע לאולם הקבלה בזמן!</string>
+    <string name="confirm_cancel_ticket">מאשר ביטול המספר? תאבד את מקומך בתור!</string>
+</resources>

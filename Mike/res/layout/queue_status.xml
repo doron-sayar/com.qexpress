@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/black">"
+    <!--  android:background="@drawable/bg2"-->
+
+    <TextView
+        android:id="@+id/tvOrganizationName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Organization Name"
+         android:textColor="#9933CC"
+        android:textSize="25sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvQueueName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Queue Name"
+        android:textColor="#AA66CC"
+        android:textSize="25sp" 
+        android:paddingBottom="15dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvLastInLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/last_in_line"
+        android:textColor="#9933CC"
+        android:textSize="20sp" >
+    </TextView>
+    
+    <TextView
+        android:id="@+id/tvLastInLineNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text=""
+        android:textColor="#AA66CC"
+        android:textSize="50sp" 
+        android:paddingBottom="15dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvNowInService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/number_in_service"
+        android:textColor="#669900"
+        android:textSize="20sp" >
+    </TextView>
+    <TextView
+        android:id="@+id/tvNowInServiceNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text=""
+        android:textColor="#99CC00"
+        android:textSize="50sp" 
+        android:paddingBottom="15dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvExpWaitTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/estimated_wait_time"
+        android:textColor="#FF8800"
+        android:textSize="20sp" >
+    </TextView>
+    <TextView
+        android:id="@+id/tvExpWaitTimeTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text=""
+        android:textColor="#FFBB33"
+        android:textSize="40sp" 
+        android:paddingBottom="30dp">
+    </TextView>
+
+    <Button
+        android:id="@+id/bGetMeInOrQuit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:textColor="#FF8800"
+        android:text="@string/get_me_in">
+        </Button>"
+        
+     <TextView
+        android:id="@+id/tvOpeningHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="20dp"
+        android:text="Opening Hours:"
+        android:textColor="#9933CC"
+        android:textSize="25sp" 
+        android:visibility="gone">"
+    </TextView>
+
+ 
+</LinearLayout>
