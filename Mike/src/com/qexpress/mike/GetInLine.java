@@ -56,20 +56,21 @@ public class GetInLine extends Activity{
 								@Override
 								public void onSuccess(String jsonStr) {
 									Log.d("Qexpress", jsonStr);
+									Intent intent=new Intent();
+									intent.putExtra("MESSAGE", jsonStr);
+									setResult(RESULT_OK,intent);  
+									GetInLine.this.finish();
 								}
-							});
-					Toast.makeText(getApplicationContext(), "You have now joined the line!", 
-							Toast.LENGTH_LONG).show();
-					GetInLine.this.finish();
+							});	
+						
 				}
 			});
 			bCancel.setOnClickListener(new View.OnClickListener() {
 				
 				@Override
 				public void onClick(View v) {
-					// TODO Auto-generated method stub
-					Toast.makeText(getApplicationContext(), "As you wish!", 
-							Toast.LENGTH_LONG).show();
+					Intent intent=new Intent();  
+                    setResult(RESULT_CANCELED,intent);
 					GetInLine.this.finish();
 				}
 			});

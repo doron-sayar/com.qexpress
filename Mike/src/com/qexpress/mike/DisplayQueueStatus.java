@@ -31,6 +31,7 @@ import com.loopj.android.http.RequestParams;
 
 
 
+
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
@@ -45,6 +46,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DisplayQueueStatus extends Activity{
 	Button  buttonGetMeIn; 
@@ -79,6 +81,8 @@ public class DisplayQueueStatus extends Activity{
     public static final String TAG_COLOR_LIGHT_ORANGE="#FFBB33";
     public static final String TAG_COLOR_DARK_RED="#CC0000";
     public static final String TAG_COLOR_LIGHT_RED="#FF4444";
+    
+    public static final int GET_IN_LINE=1;
     
 	// contacts JSONArray
 	JSONArray contacts = null;
@@ -250,7 +254,38 @@ public class DisplayQueueStatus extends Activity{
 		intent.putExtra(TAG_SITE_KEY, site_key);
 		startActivity(intent);
 	}
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	    // Check which request we're responding to
+	    if (requestCode == GET_IN_LINE) {
+	        // Make sure the request was successful
+	        if (resultCode == RESULT_OK) {
+	        	String response=data.getStringExtra("MESSAGE");
+	        	if (response != null) { 
+					try {
+						JSONObject jsonObj = new JSONObject(response);
+						
+						// Getting JSON Array node 
+						JSONArray sms = jsonObj
+								.getJSONArray("sms");
 
+						// only one element in the array
+						JSONObject s = sms.getJSONObject(0);
+						
+						String sms_response=s.getString("text");
+						
+						Intent intent = new Intent(DisplayQueueStatus.this,
+						DisplayMessage.class); 
+							intent.putExtra("MESSAGE", sms_response);
+						startActivity(intent);
+					} catch (JSONException e) {
+						e.printStackTrace();
+					}
+				} 
+	        	
+	        }
+	    }
+	}
 	@Override
 	public void onCreate(Bundle savedInstanceState) { 
 		super.onCreate(savedInstanceState);
@@ -284,8 +319,7 @@ public class DisplayQueueStatus extends Activity{
 				Intent intent = new Intent(DisplayQueueStatus.this,
 						GetInLine.class); 
 				intent.putExtra(TAG_SITE_KEY, site_key);
-				startActivity(intent); 
-			
+				startActivityForResult(intent,GET_IN_LINE); 
 			}
 		});
 

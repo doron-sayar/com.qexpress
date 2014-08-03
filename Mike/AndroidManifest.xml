@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.qexpress.mike"
-    android:versionCode="15"
-    android:versionName="1.15" >
+    android:versionCode="16"
+    android:versionName="1.16" >
 
     <uses-sdk
         android:minSdkVersion="11"
@@ -31,6 +31,10 @@
         </activity>
         <activity
             android:name="com.qexpress.mike.GetInLine"
+            android:theme="@android:style/Theme.Holo.Dialog" >
+        </activity>
+         <activity
+            android:name="com.qexpress.mike.DisplayMessage"
             android:theme="@android:style/Theme.Holo.Dialog" >
         </activity>
         <activity
